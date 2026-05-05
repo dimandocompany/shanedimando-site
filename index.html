@@ -3,708 +3,187 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shane Dimando | Building Systems. Publishing Truth. Creating Long-Term Value.</title>
-  <meta name="description" content="Shane Dimando is the founder of Dimando & Company and Dimando Press, building systems, books, and long-term projects designed to create enduring value." />
+  <title>Shane Dimando</title>
+  <meta name="description" content="Building systems. Publishing truth. Creating long-term value." />
+
   <style>
     :root {
-      --navy: #0d1b2a;
-      --deep-navy: #07111f;
-      --cream: #f5efe3;
-      --soft-cream: #fffaf0;
-      --gold: #c9a24a;
-      --muted-gold: #a9842e;
-      --slate: #526171;
-      --white: #ffffff;
-      --line: rgba(201, 162, 74, 0.35);
-      --shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
-      --radius: 22px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
+      --navy:#0d1b2a;
+      --deep:#07111f;
+      --cream:#f5efe3;
+      --gold:#c9a24a;
+      --line:rgba(201,162,74,.3);
     }
 
     body {
-      font-family: Georgia, 'Times New Roman', serif;
-      background: var(--deep-navy);
-      color: var(--cream);
-      line-height: 1.6;
+      margin:0;
+      background:var(--deep);
+      color:var(--cream);
+      font-family:Georgia, serif;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page {
-      overflow: hidden;
-    }
+    a { text-decoration:none; color:inherit; }
 
     .container {
-      width: min(1120px, calc(100% - 40px));
-      margin: 0 auto;
+      width:min(1100px, calc(100% - 40px));
+      margin:auto;
     }
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(7, 17, 31, 0.88);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(201, 162, 74, 0.18);
+      border-bottom:1px solid var(--line);
+      padding:20px 0;
     }
 
     .nav {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
 
-    .brand {
-      display: flex;
-      flex-direction: column;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .brand strong {
-      font-size: 1rem;
-      color: var(--white);
-    }
-
-    .brand span {
-      font-family: Arial, sans-serif;
-      font-size: 0.68rem;
-      color: var(--gold);
-      letter-spacing: 0.18em;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 26px;
-      font-family: Arial, sans-serif;
-      font-size: 0.88rem;
-      color: rgba(245, 239, 227, 0.82);
+    .nav-links a {
+      margin-left:20px;
+      font-family:Arial;
+      color:#ccc;
     }
 
     .nav-links a:hover {
-      color: var(--gold);
-    }
-
-    .nav-cta {
-      padding: 10px 16px;
-      border: 1px solid var(--gold);
-      border-radius: 999px;
-      color: var(--gold);
+      color:var(--gold);
     }
 
     .hero {
-      position: relative;
-      min-height: 760px;
-      display: flex;
-      align-items: center;
-      padding: 96px 0 80px;
-      background:
-        radial-gradient(circle at 78% 20%, rgba(201, 162, 74, 0.18), transparent 34%),
-        linear-gradient(135deg, var(--deep-navy) 0%, var(--navy) 50%, #111f32 100%);
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 28px;
-      border: 1px solid rgba(201, 162, 74, 0.34);
-      pointer-events: none;
-    }
-
-    .hero-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 56px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 24px;
-      font-family: Arial, sans-serif;
-      font-size: 0.76rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    .eyebrow::before {
-      content: '';
-      width: 46px;
-      height: 1px;
-      background: var(--gold);
+      padding:100px 0;
     }
 
     h1 {
-      max-width: 780px;
-      font-size: clamp(3rem, 7vw, 6.5rem);
-      line-height: 0.96;
-      letter-spacing: -0.055em;
-      color: var(--white);
-      margin-bottom: 28px;
+      font-size:64px;
+      line-height:1;
+      margin-bottom:20px;
     }
 
-    .hero p {
-      max-width: 650px;
-      font-family: Arial, sans-serif;
-      font-size: clamp(1.05rem, 1.8vw, 1.28rem);
-      color: rgba(245, 239, 227, 0.82);
-      margin-bottom: 34px;
+    .sub {
+      font-family:Arial;
+      color:#ccc;
+      max-width:600px;
+      margin-bottom:30px;
     }
 
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      align-items: center;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 22px;
-      border-radius: 999px;
-      font-family: Arial, sans-serif;
-      font-weight: 700;
-      font-size: 0.9rem;
-      transition: transform 0.2s ease, background 0.2s ease, border 0.2s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-    }
-
-    .button-primary {
-      background: var(--gold);
-      color: var(--deep-navy);
-      border: 1px solid var(--gold);
-    }
-
-    .button-secondary {
-      border: 1px solid rgba(245, 239, 227, 0.38);
-      color: var(--cream);
-    }
-
-    .hero-card {
-      background: rgba(245, 239, 227, 0.08);
-      border: 1px solid rgba(201, 162, 74, 0.28);
-      border-radius: var(--radius);
-      padding: 34px;
-      box-shadow: var(--shadow);
-    }
-
-    .hero-card h2 {
-      font-size: 1.7rem;
-      line-height: 1.12;
-      margin-bottom: 18px;
-      color: var(--white);
-    }
-
-    .principle {
-      border-left: 3px solid var(--gold);
-      padding-left: 20px;
-      margin: 24px 0;
-      font-size: 1.35rem;
-      color: var(--cream);
-    }
-
-    .hero-card small {
-      display: block;
-      font-family: Arial, sans-serif;
-      color: rgba(245, 239, 227, 0.68);
-      font-size: 0.88rem;
+    .btn {
+      display:inline-block;
+      padding:12px 20px;
+      background:var(--gold);
+      color:#07111f;
+      font-family:Arial;
+      font-weight:bold;
+      border-radius:6px;
     }
 
     section {
-      padding: 92px 0;
+      padding:80px 0;
+      border-top:1px solid var(--line);
     }
 
-    .section-light {
-      background: var(--cream);
-      color: var(--navy);
-    }
-
-    .section-dark {
-      background: var(--deep-navy);
-      color: var(--cream);
-    }
-
-    .section-header {
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 48px;
-      align-items: end;
-      margin-bottom: 42px;
-    }
-
-    .kicker {
-      font-family: Arial, sans-serif;
-      font-size: 0.74rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--muted-gold);
-      margin-bottom: 12px;
-    }
-
-    .section-title {
-      font-size: clamp(2.1rem, 4vw, 4rem);
-      line-height: 1;
-      letter-spacing: -0.045em;
-    }
-
-    .section-copy {
-      font-family: Arial, sans-serif;
-      color: var(--slate);
-      font-size: 1.04rem;
-    }
-
-    .section-dark .section-copy {
-      color: rgba(245, 239, 227, 0.72);
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+      gap:20px;
     }
 
     .card {
-      background: var(--soft-cream);
-      color: var(--navy);
-      border: 1px solid rgba(13, 27, 42, 0.08);
-      border-radius: var(--radius);
-      padding: 30px;
-      min-height: 260px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-shadow: 0 16px 42px rgba(13, 27, 42, 0.08);
-    }
-
-    .card .icon {
-      width: 52px;
-      height: 52px;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-      color: var(--muted-gold);
-      margin-bottom: 26px;
-      font-family: Arial, sans-serif;
-      font-weight: 700;
+      padding:25px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:rgba(255,255,255,0.03);
     }
 
     .card h3 {
-      font-size: 1.55rem;
-      line-height: 1.12;
-      margin-bottom: 14px;
-    }
-
-    .card p {
-      font-family: Arial, sans-serif;
-      color: var(--slate);
-      margin-bottom: 24px;
-    }
-
-    .text-link {
-      font-family: Arial, sans-serif;
-      color: var(--muted-gold);
-      font-weight: 700;
-      font-size: 0.92rem;
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .quote-panel {
-      padding: 48px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(245, 239, 227, 0.06);
-      box-shadow: var(--shadow);
-    }
-
-    .quote-panel blockquote {
-      font-size: clamp(2rem, 4vw, 4.2rem);
-      line-height: 1.02;
-      letter-spacing: -0.05em;
-      color: var(--white);
-    }
-
-    .quote-panel p {
-      margin-top: 22px;
-      font-family: Arial, sans-serif;
-      color: rgba(245, 239, 227, 0.72);
-    }
-
-    .list {
-      display: grid;
-      gap: 18px;
-    }
-
-    .list-item {
-      display: grid;
-      grid-template-columns: 42px 1fr;
-      gap: 16px;
-      align-items: start;
-      padding-bottom: 18px;
-      border-bottom: 1px solid rgba(245, 239, 227, 0.12);
-    }
-
-    .number {
-      font-family: Arial, sans-serif;
-      color: var(--gold);
-      font-weight: 700;
-    }
-
-    .list-item h3 {
-      font-size: 1.28rem;
-      margin-bottom: 6px;
-    }
-
-    .list-item p {
-      font-family: Arial, sans-serif;
-      color: rgba(245, 239, 227, 0.68);
-    }
-
-    .essays {
-      display: grid;
-      gap: 14px;
-    }
-
-    .essay {
-      display: grid;
-      grid-template-columns: 140px 1fr auto;
-      gap: 24px;
-      align-items: center;
-      padding: 24px 0;
-      border-bottom: 1px solid rgba(13, 27, 42, 0.12);
-    }
-
-    .essay time {
-      font-family: Arial, sans-serif;
-      font-size: 0.82rem;
-      color: var(--muted-gold);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .essay h3 {
-      font-size: 1.45rem;
-      line-height: 1.15;
-    }
-
-    .essay span {
-      font-family: Arial, sans-serif;
-      color: var(--slate);
-    }
-
-    .contact-band {
-      background: linear-gradient(135deg, var(--gold), #dfc173);
-      color: var(--deep-navy);
-      border-radius: 32px;
-      padding: 52px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .contact-band h2 {
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      line-height: 1;
-      letter-spacing: -0.045em;
-      margin-bottom: 12px;
-    }
-
-    .contact-band p {
-      font-family: Arial, sans-serif;
-      max-width: 620px;
-    }
-
-    .contact-band .button {
-      background: var(--deep-navy);
-      color: var(--cream);
-      border: 1px solid var(--deep-navy);
+      margin-top:0;
     }
 
     footer {
-      padding: 36px 0;
-      background: var(--deep-navy);
-      border-top: 1px solid rgba(201, 162, 74, 0.18);
-      font-family: Arial, sans-serif;
-      color: rgba(245, 239, 227, 0.58);
-      font-size: 0.9rem;
+      padding:40px 0;
+      border-top:1px solid var(--line);
+      font-family:Arial;
+      color:#aaa;
     }
 
-    .footer-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 900px) {
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        min-height: auto;
-      }
-
-      .hero::before {
-        inset: 16px;
-      }
-
-      .hero-grid,
-      .section-header,
-      .split,
-      .contact-band {
-        grid-template-columns: 1fr;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .essay {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .container {
-        width: min(100% - 28px, 1120px);
-      }
-
-      section {
-        padding: 68px 0;
-      }
-
-      .hero {
-        padding: 72px 0 62px;
-      }
-
-      h1 {
-        font-size: 3.35rem;
-      }
-
-      .hero-card,
-      .quote-panel,
-      .contact-band {
-        padding: 28px;
-      }
-    }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <div class="container nav">
-        <a class="brand" href="/">
-          <strong>Shane Dimando</strong>
-          <span>Founder · Publisher · Builder</span>
-        </a>
-        <nav class="nav-links" aria-label="Primary navigation">
-	  <a href="/about/">About</a>
-	  <a href="/books/">Books</a>
-	  <a href="/essays/">Essays</a>
-          <a href="#work">Work</a>
-          <a href="#principle">Principle</a>
-          <a href="#writing">Writing</a>
-          <a href="mailto:info@dimando.co" class="nav-cta">Contact</a>
-        </nav>
-      </div>
-    </header>
 
-    <main id="top">
-      <section class="hero">
-        <div class="container hero-grid">
-          <div>
-            <div class="eyebrow">Mothership Platform</div>
-            <h1>Building Systems. Publishing Truth. Creating Long-Term Value.</h1>
-            <p>
-              Founder of Dimando & Company and Dimando Press. Building companies, books, and enduring projects designed to outlast noise and create real impact.
-            </p>
-            <div class="actions">
-              <a class="button button-primary" href="#work">Explore the Work</a>
-              <a class="button button-secondary" href="#writing">Read the Writing</a>
-            </div>
-          </div>
-
-          <aside class="hero-card" aria-label="Operating principle">
-            <h2>The work is simple, but not easy.</h2>
-            <div class="principle">Emotion reacts. Perspective evaluates. Wisdom waits.</div>
-            <small>
-              This platform exists to organize the work: faith, family, business, publishing, civic legacy, and disciplined execution.
-            </small>
-          </aside>
-        </div>
-      </section>
-
-      <section id="work" class="section-light">
-        <div class="container">
-          <div class="section-header">
-            <div>
-              <div class="kicker">Current Focus</div>
-              <h2 class="section-title">The work is organized into clear lanes.</h2>
-            </div>
-            <p class="section-copy">
-              Each lane serves a different purpose: cash flow, publishing leverage, civic legacy, and long-term platform building. The goal is not activity. The goal is aligned execution.
-            </p>
-          </div>
-
-          <div class="cards">
-            <article class="card">
-              <div>
-                <div class="icon">01</div>
-                <h3>Dimando & Company</h3>
-                <p>Professional residential installation services done clean, precise, and right the first time.</p>
-              </div>
-              <a class="text-link" href="https://dimando.co">Visit dimando.co →</a>
-            </article>
-
-            <article class="card">
-              <div>
-                <div class="icon">02</div>
-                <h3>Dimando Press</h3>
-                <p>A publishing engine for books, essays, and long-form work built around faith, discipline, systems, and endurance.</p>
-              </div>
-              <a class="text-link" href="#writing">View writing →</a>
-            </article>
-
-            <article class="card">
-              <div>
-                <div class="icon">03</div>
-                <h3>Legacy Projects</h3>
-                <p>Civic and historical projects designed to preserve stories, honor service, and build something worth handing down.</p>
-              </div>
-              <a class="text-link" href="#contact">Start a conversation →</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="principle" class="section-dark">
-        <div class="container split">
-          <div class="quote-panel">
-            <blockquote>Faith gives direction. Discipline builds the road.</blockquote>
-            <p>
-              The work is not about chasing every opportunity. It is about choosing the right ones, building the system, and staying faithful long enough for momentum to compound.
-            </p>
-          </div>
-
-          <div class="list">
-            <div class="list-item">
-              <div class="number">01</div>
-              <div>
-                <h3>Build what lasts.</h3>
-                <p>Create systems, brands, and written work that are not dependent on noise, trends, or constant reaction.</p>
-              </div>
-            </div>
-            <div class="list-item">
-              <div class="number">02</div>
-              <div>
-                <h3>Separate emotion from direction.</h3>
-                <p>Slow the reaction. Study the moment. Make the next wise move.</p>
-              </div>
-            </div>
-            <div class="list-item">
-              <div class="number">03</div>
-              <div>
-                <h3>Turn conviction into execution.</h3>
-                <p>Faith without action becomes sentiment. Action without faith becomes striving. The work needs both.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="writing" class="section-light">
-        <div class="container">
-          <div class="section-header">
-            <div>
-              <div class="kicker">Writing & Publishing</div>
-              <h2 class="section-title">Books and essays for people building through real life.</h2>
-            </div>
-            <p class="section-copy">
-              This section will become the publishing hub for books, essays, reflections, and field notes from the work of building companies, faith, family, and long-term value.
-            </p>
-          </div>
-
-          <div class="essays">
-            <article class="essay">
-              <time>Featured Book</time>
-              <a href="/books/you-are-not-a-machine/"><h3>You Are Not A Machine</h3></a>
-              <span>Coming from Dimando Press</span>
-            </article>
-            <article class="essay">
-              <time>Series</time>
-              <h3>Running on Prayer</h3>
-              <span>Faith, endurance, and daily alignment</span>
-            </article>
-            <article class="essay">
-              <time>Essay</time>
-              <h3>Emotion Reacts. Perspective Evaluates. Wisdom Waits.</h3>
-              <span>Operating principle</span>
-            </article>
-            <article class="essay">
-              <time>Field Note</time>
-              <h3>Building vs. Consuming</h3>
-              <span>Founder discipline</span>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="section-dark">
-        <div class="container">
-          <div class="contact-band">
-            <div>
-              <h2>Build the right conversation.</h2>
-              <p>
-                For partnerships, publishing, civic projects, installation services, or strategic conversations, reach out directly.
-              </p>
-            </div>
-            <a class="button" href="mailto:info@dimando.co">Contact Shane</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="container footer-row">
-        <span>© 2026 Shane Dimando. All rights reserved.</span>
-        <span>Building systems. Publishing truth. Creating long-term value.</span>
-      </div>
-    </footer>
+<header>
+  <div class="container nav">
+    <div>
+      <strong>Shane Dimando</strong>
+    </div>
+    <div class="nav-links">
+      <a href="/about/">About</a>
+      <a href="/books/">Books</a>
+      <a href="/essays/">Essays</a>
+      <a href="mailto:info@dimando.co">Contact</a>
+    </div>
   </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <h1>Building Systems.<br>Publishing Truth.<br>Creating Long-Term Value.</h1>
+    <p class="sub">
+      Founder of Dimando & Company and Dimando Press. Building companies, books, and systems designed to last.
+    </p>
+    <a class="btn" href="/books/you-are-not-a-machine/">Start Here</a>
+  </section>
+
+  <section>
+    <h2>Start Here</h2>
+    <div class="grid">
+
+      <a href="/books/you-are-not-a-machine/" class="card">
+        <h3>You Are Not A Machine</h3>
+        <p>A grounded book on discipline, identity, and clarity.</p>
+      </a>
+
+      <a href="/essays/emotion-reacts-perspective-evaluates/" class="card">
+        <h3>Emotion Reacts</h3>
+        <p>A core principle for thinking clearly and acting wisely.</p>
+      </a>
+
+      <a href="/essays/building-vs-consuming/" class="card">
+        <h3>Building vs Consuming</h3>
+        <p>Why creating changes everything.</p>
+      </a>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Writing</h2>
+    <div class="grid">
+
+      <a href="/essays/why-most-people-stay-stuck/" class="card">
+        <h3>Why Most People Stay Stuck</h3>
+        <p>Clarity, direction, and momentum.</p>
+      </a>
+
+      <a href="/essays/discipline-creates-freedom/" class="card">
+        <h3>Discipline Creates Freedom</h3>
+        <p>Structure as a path to real freedom.</p>
+      </a>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Stay Updated</h2>
+    <p class="sub">Get updates on new essays, books, and what I’m building.</p>
+    <a class="btn" href="mailto:info@dimando.co?subject=Subscribe">Request Updates</a>
+  </section>
+
+</main>
+
+<footer class="container">
+  © 2026 Shane Dimando
+</footer>
+
 </body>
 </html>

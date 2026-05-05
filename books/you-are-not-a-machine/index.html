@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You Are Not A Machine | Shane Dimando</title>
+  <meta name="description" content="You Are Not A Machine by Shane Dimando — a grounded book about discipline, identity, focus, and building a life beyond noise." />
+  <style>
+    :root {
+      --navy:#0d1b2a;
+      --deep:#07111f;
+      --cream:#f5efe3;
+      --soft:#fff8e9;
+      --gold:#c9a24a;
+      --muted:#d9cfbd;
+      --slate:#526171;
+      --line:rgba(201,162,74,.35);
+      --radius:22px;
+    }
+
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Georgia, 'Times New Roman', serif; background:var(--deep); color:var(--cream); line-height:1.6; }
+    a { color:inherit; text-decoration:none; }
+    .container { width:min(1120px, calc(100% - 40px)); margin:0 auto; }
+
+    header { border-bottom:1px solid rgba(201,162,74,.22); background:rgba(7,17,31,.94); position:sticky; top:0; z-index:10; }
+    .nav { min-height:74px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { text-transform:uppercase; letter-spacing:.08em; }
+    .brand strong { display:block; color:#fff; font-size:1rem; }
+    .brand span { display:block; color:var(--gold); font:700 .68rem Arial, sans-serif; letter-spacing:.2em; }
+    .nav-links { display:flex; gap:24px; align-items:center; font:700 .9rem Arial, sans-serif; color:rgba(245,239,227,.8); }
+    .nav-links a:hover { color:var(--gold); }
+    .nav-cta { border:1px solid var(--gold); color:var(--gold); padding:9px 15px; border-radius:999px; }
+
+    .hero { padding:96px 0 88px; background:radial-gradient(circle at 80% 10%, rgba(201,162,74,.2), transparent 32%), linear-gradient(135deg, var(--deep), var(--navy)); border-bottom:1px solid rgba(201,162,74,.22); }
+    .hero-grid { display:grid; grid-template-columns:1fr .72fr; gap:54px; align-items:center; }
+    .eyebrow { color:var(--gold); font:700 .76rem Arial, sans-serif; letter-spacing:.22em; text-transform:uppercase; margin-bottom:18px; }
+    h1 { font-size:clamp(3.2rem, 7vw, 6.2rem); line-height:.94; letter-spacing:-.055em; margin:0 0 24px; color:#fff; }
+    .subtitle { max-width:690px; color:rgba(245,239,227,.82); font:1.18rem Arial, sans-serif; margin:0 0 30px; }
+    .actions { display:flex; gap:14px; flex-wrap:wrap; }
+    .button { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 22px; border-radius:999px; font:700 .9rem Arial, sans-serif; }
+    .primary { background:var(--gold); color:var(--deep); border:1px solid var(--gold); }
+    .secondary { border:1px solid rgba(245,239,227,.35); color:var(--cream); }
+
+    .book-card { background:rgba(245,239,227,.07); border:1px solid var(--line); border-radius:var(--radius); padding:26px; box-shadow:0 24px 60px rgba(0,0,0,.25); }
+    .cover { aspect-ratio:2/3; border-radius:18px; background:linear-gradient(150deg, #111f32, #07111f 55%, #1b2b40); border:1px solid rgba(201,162,74,.4); display:flex; align-items:center; justify-content:center; text-align:center; padding:28px; position:relative; overflow:hidden; }
+    .cover:before { content:''; position:absolute; inset:18px; border:1px solid rgba(201,162,74,.45); }
+    .cover-title { position:relative; z-index:1; color:#fff; font-size:2.2rem; line-height:.98; letter-spacing:-.045em; }
+    .cover small { display:block; margin-top:18px; color:var(--gold); font:700 .68rem Arial, sans-serif; letter-spacing:.18em; text-transform:uppercase; }
+    .book-meta { margin-top:22px; font: .95rem Arial, sans-serif; color:rgba(245,239,227,.72); display:grid; gap:8px; }
+    .book-meta strong { color:var(--gold); }
+
+    section { padding:86px 0; }
+    .light { background:var(--cream); color:var(--navy); }
+    .section-grid { display:grid; grid-template-columns:.82fr 1.18fr; gap:52px; align-items:start; }
+    h2 { font-size:clamp(2rem, 4vw, 3.5rem); line-height:1; letter-spacing:-.045em; margin:0 0 22px; }
+    .kicker { color:#9b792d; font:700 .74rem Arial, sans-serif; letter-spacing:.22em; text-transform:uppercase; margin-bottom:12px; }
+    p, li { font-family:Arial, sans-serif; }
+    .light p, .light li { color:#3e4a57; }
+    .dark-copy { color:rgba(245,239,227,.76); }
+    .quote { border-left:3px solid var(--gold); padding-left:22px; margin:28px 0; font-size:1.55rem; line-height:1.25; color:#fff; }
+
+    .bullets { display:grid; gap:16px; margin-top:24px; }
+    .bullet { background:var(--soft); border:1px solid rgba(13,27,42,.1); border-radius:18px; padding:22px; }
+    .bullet strong { display:block; color:var(--navy); margin-bottom:6px; font-size:1.08rem; }
+
+    .promise { background:var(--deep); color:var(--cream); }
+    .promise-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:34px; }
+    .promise-card { border:1px solid var(--line); border-radius:20px; padding:24px; background:rgba(245,239,227,.06); }
+    .promise-card h3 { margin:0 0 10px; font-size:1.35rem; }
+    .promise-card p { color:rgba(245,239,227,.7); margin:0; }
+
+    .launch { background:linear-gradient(135deg, var(--gold), #dfc173); color:var(--deep); border-radius:28px; padding:44px; display:grid; grid-template-columns:1fr auto; gap:26px; align-items:center; }
+    .launch h2 { margin-bottom:10px; }
+    .launch p { color:#1a2430; margin:0; max-width:680px; }
+    .launch .button { background:var(--deep); color:var(--cream); }
+
+    footer { padding:34px 0; border-top:1px solid rgba(201,162,74,.18); color:rgba(245,239,227,.58); font:.9rem Arial, sans-serif; }
+
+    @media(max-width:900px){
+      .nav-links{display:none;}
+      .hero-grid,.section-grid,.launch{grid-template-columns:1fr;}
+      .promise-cards{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="/">
+        <strong>Shane Dimando</strong>
+        <span>Founder · Publisher · Builder</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/about/">About</a>
+        <a href="/books/">Books</a>
+        <a href="/#writing">Writing</a>
+        <a href="mailto:info@dimando.co" class="nav-cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Dimando Press · Featured Book</div>
+          <h1>You Are Not A Machine</h1>
+          <p class="subtitle">A grounded book about identity, discipline, focus, and building a life that is not controlled by noise, hurry, or constant output.</p>
+          <div class="actions">
+            <a class="button primary" href="mailto:info@dimando.co?subject=You%20Are%20Not%20A%20Machine%20Release%20Updates">Request Release Updates</a>
+            <a class="button secondary" href="/books/">Back to Books</a>
+          </div>
+        </div>
+
+        <aside class="book-card">
+          <div class="cover">
+            <div class="cover-title">
+              You Are<br />Not A<br />Machine
+              <small>Shane Dimando</small>
+            </div>
+          </div>
+          <div class="book-meta">
+            <div><strong>Status:</strong> Coming Soon</div>
+            <div><strong>Publisher:</strong> Dimando Press</div>
+            <div><strong>Format:</strong> Hardcover first, paperback and digital to follow</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="light">
+      <div class="container section-grid">
+        <div>
+          <div class="kicker">Overview</div>
+          <h2>A book for people who feel pulled in too many directions.</h2>
+        </div>
+        <div>
+          <p>You Are Not A Machine is a response to a world that rewards speed, reaction, and constant output. It challenges the quiet assumption that your value is measured by productivity alone.</p>
+          <p>This book is about slowing down enough to think clearly, recover direction, and build a life that is aligned instead of reactive.</p>
+          <div class="bullets">
+            <div class="bullet"><strong>Movement is not the same as progress.</strong> Activity can keep you busy while keeping you stuck.</div>
+            <div class="bullet"><strong>Discipline is not punishment.</strong> It is structure that protects what matters.</div>
+            <div class="bullet"><strong>Identity must come before output.</strong> You are not what you produce. You are a person before you are a performer.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="promise">
+      <div class="container">
+        <div class="kicker">Core Principle</div>
+        <h2>Emotion reacts. Perspective evaluates. Wisdom waits.</h2>
+        <p class="dark-copy">The book returns to this operating principle again and again. When life gets loud, the first job is not to move faster. The first job is to see clearly.</p>
+        <div class="promise-cards">
+          <article class="promise-card">
+            <h3>For the distracted</h3>
+            <p>A reminder that focus is not found by adding more, but by removing what keeps pulling you away.</p>
+          </article>
+          <article class="promise-card">
+            <h3>For the weary</h3>
+            <p>A steady voice for seasons when output has been high, but peace has been low.</p>
+          </article>
+          <article class="promise-card">
+            <h3>For the builder</h3>
+            <p>A framework for building with discipline without becoming consumed by the machine you are building.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="light">
+      <div class="container section-grid">
+        <div>
+          <div class="kicker">Author Note</div>
+          <h2>Written from the middle of the work.</h2>
+        </div>
+        <div>
+          <p>This book was written while building companies, systems, habits, and a more intentional life. It is not theory from the outside. It is a field note from inside the tension.</p>
+          <p>The goal is simple: to give readers something they can return to when the world feels rushed, unclear, or overly demanding.</p>
+          <div class="quote">You do not need to become less human to become more effective.</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="launch">
+          <div>
+            <h2>Release details coming soon.</h2>
+            <p>Hardcover release first through Dimando Press, followed by paperback and digital formats.</p>
+          </div>
+          <a class="button" href="mailto:info@dimando.co?subject=You%20Are%20Not%20A%20Machine%20Release%20Updates">Request Updates</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Shane Dimando · Dimando Press</div>
+  </footer>
+</body>
+</html>

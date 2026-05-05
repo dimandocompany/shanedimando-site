@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Essays | Shane Dimando</title>
+  <meta name="description" content="Essays by Shane Dimando on faith, discipline, systems, perspective, business, and building a life beyond noise." />
+  <style>
+    :root {
+      --navy:#0d1b2a;
+      --deep:#07111f;
+      --cream:#f5efe3;
+      --soft:#fff8e9;
+      --gold:#c9a24a;
+      --muted:#d9cfbd;
+      --slate:#526171;
+      --line:rgba(201,162,74,.35);
+      --radius:22px;
+    }
+
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Georgia, 'Times New Roman', serif; background:var(--deep); color:var(--cream); line-height:1.6; }
+    a { color:inherit; text-decoration:none; }
+    .container { width:min(1120px, calc(100% - 40px)); margin:0 auto; }
+
+    header { border-bottom:1px solid rgba(201,162,74,.22); background:rgba(7,17,31,.94); position:sticky; top:0; z-index:10; }
+    .nav { min-height:74px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { text-transform:uppercase; letter-spacing:.08em; }
+    .brand strong { display:block; color:#fff; font-size:1rem; }
+    .brand span { display:block; color:var(--gold); font:700 .68rem Arial, sans-serif; letter-spacing:.2em; }
+    .nav-links { display:flex; gap:24px; align-items:center; font:700 .9rem Arial, sans-serif; color:rgba(245,239,227,.8); }
+    .nav-links a:hover { color:var(--gold); }
+    .nav-cta { border:1px solid var(--gold); color:var(--gold); padding:9px 15px; border-radius:999px; }
+
+    .hero { padding:96px 0 84px; background:radial-gradient(circle at 80% 10%, rgba(201,162,74,.2), transparent 32%), linear-gradient(135deg, var(--deep), var(--navy)); border-bottom:1px solid rgba(201,162,74,.22); }
+    .eyebrow { color:var(--gold); font:700 .76rem Arial, sans-serif; letter-spacing:.22em; text-transform:uppercase; margin-bottom:18px; }
+    h1 { font-size:clamp(3.2rem, 7vw, 6.2rem); line-height:.94; letter-spacing:-.055em; margin:0 0 24px; color:#fff; max-width:850px; }
+    .subtitle { max-width:730px; color:rgba(245,239,227,.82); font:1.18rem Arial, sans-serif; margin:0; }
+
+    section { padding:82px 0; }
+    .light { background:var(--cream); color:var(--navy); }
+    .section-header { display:grid; grid-template-columns:.85fr 1.15fr; gap:44px; align-items:end; margin-bottom:42px; }
+    .kicker { color:#9b792d; font:700 .74rem Arial, sans-serif; letter-spacing:.22em; text-transform:uppercase; margin-bottom:12px; }
+    h2 { font-size:clamp(2rem, 4vw, 3.5rem); line-height:1; letter-spacing:-.045em; margin:0; }
+    p { font-family:Arial, sans-serif; }
+    .section-copy { color:#3e4a57; font-size:1.04rem; }
+
+    .featured { background:var(--soft); border:1px solid rgba(13,27,42,.1); border-radius:var(--radius); padding:34px; display:grid; grid-template-columns:1fr auto; gap:30px; align-items:center; box-shadow:0 18px 45px rgba(13,27,42,.08); margin-bottom:24px; }
+    .featured h3 { font-size:2rem; line-height:1.05; margin:0 0 12px; letter-spacing:-.03em; }
+    .featured p { color:#3e4a57; margin:0 0 18px; max-width:680px; }
+    .tag { display:inline-block; color:#9b792d; font:700 .72rem Arial, sans-serif; letter-spacing:.18em; text-transform:uppercase; margin-bottom:12px; }
+    .button { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:0 18px; border-radius:999px; background:var(--gold); color:var(--deep); font:700 .88rem Arial, sans-serif; }
+
+    .essay-list { display:grid; gap:16px; }
+    .essay { background:#fffaf0; border:1px solid rgba(13,27,42,.1); border-radius:18px; padding:24px; display:grid; grid-template-columns:150px 1fr auto; gap:24px; align-items:center; }
+    .essay time { color:#9b792d; font:700 .72rem Arial, sans-serif; letter-spacing:.16em; text-transform:uppercase; }
+    .essay h3 { margin:0 0 6px; font-size:1.4rem; line-height:1.15; }
+    .essay p { margin:0; color:#526171; font-size:.96rem; }
+    .essay .arrow { color:#9b792d; font:700 1rem Arial, sans-serif; }
+
+    .dark { background:var(--deep); color:var(--cream); }
+    .categories { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:32px; }
+    .category { border:1px solid var(--line); border-radius:18px; padding:22px; background:rgba(245,239,227,.06); }
+    .category h3 { margin:0 0 8px; font-size:1.25rem; }
+    .category p { margin:0; color:rgba(245,239,227,.7); font-size:.95rem; }
+
+    .quote-band { background:linear-gradient(135deg, var(--gold), #dfc173); color:var(--deep); border-radius:28px; padding:44px; display:grid; grid-template-columns:1fr auto; gap:26px; align-items:center; }
+    .quote-band h2 { margin-bottom:10px; }
+    .quote-band p { color:#1a2430; margin:0; max-width:680px; }
+    .quote-band .button { background:var(--deep); color:var(--cream); }
+
+    footer { padding:34px 0; border-top:1px solid rgba(201,162,74,.18); color:rgba(245,239,227,.58); font:.9rem Arial, sans-serif; }
+
+    @media(max-width:900px){
+      .nav-links{display:none;}
+      .section-header,.featured,.essay,.quote-band{grid-template-columns:1fr;}
+      .categories{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="/">
+        <strong>Shane Dimando</strong>
+        <span>Founder · Publisher · Builder</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/about/">About</a>
+        <a href="/books/">Books</a>
+        <a href="/essays/">Essays</a>
+        <a href="mailto:info@dimando.co" class="nav-cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">Essays & Field Notes</div>
+        <h1>Writing for builders, believers, and people learning to move with wisdom.</h1>
+        <p class="subtitle">Essays on faith, discipline, systems, business, perspective, and building a life that is not controlled by noise.</p>
+      </div>
+    </section>
+
+    <section class="light">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="kicker">Start Here</div>
+            <h2>Core essays</h2>
+          </div>
+          <p class="section-copy">These essays form the foundation of the writing platform. They support the books, clarify the philosophy, and create a place for ideas to compound over time.</p>
+        </div>
+
+        <article class="featured">
+          <div>
+            <span class="tag">Featured Essay</span>
+            <h3>Emotion Reacts. Perspective Evaluates. Wisdom Waits.</h3>
+            <p>A foundational operating principle for slowing down, seeing clearly, and making wiser decisions when life feels loud or urgent.</p>
+            <a class="button" href="/essays/emotion-reacts-perspective-evaluates/">Read Essay</a>
+          </div>
+        </article>
+
+        <div class="essay-list">
+          <a class="essay" href="/essays/building-vs-consuming/">
+            <time>Field Note</time>
+            <div>
+              <h3>Building vs. Consuming</h3>
+              <p>Why creation compounds while consumption disappears.</p>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+
+          <a class="essay" href="/essays/why-most-people-stay-stuck/">
+            <time>Essay</time>
+            <div>
+              <h3>Why Most People Stay Stuck</h3>
+              <p>The quiet cost of drift, distraction, and unclear direction.</p>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+
+          <a class="essay" href="/essays/discipline-creates-freedom/">
+            <time>Essay</time>
+            <div>
+              <h3>Discipline Creates Freedom</h3>
+              <p>Structure is not a cage. It is the road that carries what matters.</p>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark">
+      <div class="container">
+        <div class="kicker">Writing Lanes</div>
+        <h2>Clear categories. No noise.</h2>
+        <div class="categories">
+          <article class="category">
+            <h3>Faith</h3>
+            <p>Prayer, patience, obedience, endurance, and daily alignment.</p>
+          </article>
+          <article class="category">
+            <h3>Systems</h3>
+            <p>How structure turns intention into repeatable progress.</p>
+          </article>
+          <article class="category">
+            <h3>Business</h3>
+            <p>Founder discipline, local service, trust, and execution.</p>
+          </article>
+          <article class="category">
+            <h3>Perspective</h3>
+            <p>Slowing reaction, seeing clearly, and choosing wisely.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark">
+      <div class="container">
+        <div class="quote-band">
+          <div>
+            <h2>Writing is the archive of the work.</h2>
+            <p>The essays are not separate from the building. They document the lessons, decisions, principles, and perspective formed while doing the work.</p>
+          </div>
+          <a class="button" href="/books/you-are-not-a-machine/">Featured Book</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Shane Dimando · Essays & Field Notes</div>
+  </footer>
+</body>
+</html>
